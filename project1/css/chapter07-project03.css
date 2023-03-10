@@ -1,0 +1,29 @@
+.topHeaderRow {
+    background-color:#142860;
+    
+}
+
+.topHeaderRow a {
+    color: white;
+}
+
+.list-inline {
+    margin-top: 6%;
+}
+
+
+/* TODO: Change font of the nav-brand */
+
+.thumbnail {
+
+}
+
+footer {
+    background-color: #303f9f;
+    color: white;
+}
+
+.final{
+    background-color: #142860;
+    text-align: center;
+}
