@@ -12,12 +12,6 @@
 }
 
 
-/* TODO: Change font of the nav-brand */
-
-.thumbnail {
-
-}
-
 footer {
     background-color: #303f9f;
     color: white;
@@ -26,4 +20,6 @@ footer {
 .final{
     background-color: #142860;
     text-align: center;
+    margin-top: 30px;
 }
+
