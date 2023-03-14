@@ -1,37 +1,36 @@
 /* add code here */
-// $(function () {
-//     $('div img').on('click', function(e){
-//     // construct preview filename based on existing img 
-//     var alt = $(this).attr('alt'); 
-//     var src = $(this).attr('src'); 
-//     var newsrc = src.replace("small","medium"); 
-
-//     // make dynamic element with larger preview image and caption 
-    
-//     var image = $('<img src="' + newsrc + '">'); 
-    
-//     $('figure').append(image);
-
-        
-//     });
-// });
 
 document.getElementById("thumbnails").addEventListener("click", function(e) {
 
-
+    //get the source and title of whatever is clicked
     var src = e.target.getAttribute('src');
-    console.log(src);
-    var newsrc = src.replace("small", "medium");
+    var title = e.target.getAttribute("title");
 
-    //remove the old img node
+    //change the new source to medium
+    if(src.includes("small")){
+        var newsrc = src.replace("small", "medium");
+    }
+    
+
+    //change the source and title of the large img, also the figcaption
     var imgInFigure = document.querySelector('#featured').querySelector('img');
-    console.log(imgInFigure);
     imgInFigure.src = newsrc;
-    // figureNode.removeChild(imgInFigure);
-    // alert(e.target.innerText);
+    imgInFigure.title = title;
+    document.getElementsByTagName("figcaption")[0].innerText = title;
 
-    //add new img node that displays the bigger version of whatever was clicked
-    // const mediumImg = document.createElement('img');
-    // mediumImg.src = newsrc;
-    // figureNode.appendChild(mediumImg);
-})
+});
+
+//moveover and moveout faded and animation effects
+document.getElementById("featured").addEventListener("mouseover", function(e) {
+
+    document.getElementsByTagName("figcaption")[0].style.transition = "opacity 1s";
+    document.getElementsByTagName("figcaption")[0].style.opacity = "0.8";
+    
+
+});
+
+document.getElementById("featured").addEventListener("mouseout", function(e) {
+    document.getElementsByTagName("figcaption")[0].style.transition = "opacity 1s";    
+    document.getElementsByTagName("figcaption")[0].style.opacity = "0";
+
+});
